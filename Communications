@@ -1,4 +1,6 @@
 //For Co Op between allies using creep.say and creep.saying
+var AllianceModule = require("AllianceModule");//allies list
+
 function Defend(msg){
 var room = DecodeMsg(msg);
 
@@ -35,5 +37,10 @@ else if (creep.saying.substr(0,3) == "AA-") AllOutAttack(creep.saying);
 }
 
 module.exports = {
-
+CheckMessenger : function(creep){
+if (AllianceModule.run(creep.owner.username) == true && creep.hitsMax == 100){
+//needs to be sent by a messenger / scout (1 move part aka 100 hits)
+ReadMsg(creep); //Read message (if any)
+}
+}
 };
