@@ -1,0 +1,39 @@
+//For Co Op between allies using creep.say and creep.saying
+function Defend(msg){
+var room = DecodeMsg(msg);
+
+}
+
+function Explore(msg){
+var room = DecodeMsg(msg);
+
+}
+
+function Attack(msg){
+var room = DecodeMsg(msg);
+
+}
+
+function AllOutAttack(msg){
+var room = DecodeMsg(msg);
+
+}
+
+function DecodeMsg(msg){
+var decoding = msg.split("-");
+var room = msg[1]; //2nd index
+return room
+}
+
+function ReadMsg(creep){
+if (creep.saying != undefined){
+if (creep.saying.substr(0,2) == "D-")  Defend(creep.saying);
+else if (creep.saying.substr(0,2) == "E-") Explore(creep.saying);
+else if (creep.saying.substr(0,2) == "A-") Attack(creep.saying);
+else if (creep.saying.substr(0,3) == "AA-") AllOutAttack(creep.saying);
+}
+}
+
+module.exports = {
+
+};
