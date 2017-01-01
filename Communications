@@ -29,7 +29,7 @@ return room
 
 function ReadMsg(creep){
 if (creep.saying != undefined){
-console.log(creep.owner.username + "'s scout creep said '" + creep.saying + "'.")
+console.log(creep.owner.username + "'s scout creep sent a message to : " + creep.room.name + "it read '" + creep.saying + "'.");
 if (creep.saying.substr(0,2) == "D-")  Defend(creep.saying);
 else if (creep.saying.substr(0,2) == "E-") Explore(creep.saying);
 else if (creep.saying.substr(0,2) == "A-") Attack(creep.saying);
