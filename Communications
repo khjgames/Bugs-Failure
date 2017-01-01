@@ -3,22 +3,22 @@ var AllianceModule = require("AllianceModule");//allies list
 
 function Defend(msg){
 var room = DecodeMsg(msg);
-
+console.log("An ally requested we send defensive creeps to :" + room);
 }
 
 function Explore(msg){
 var room = DecodeMsg(msg);
-
+console.log("An ally is sharing exploration information, such as enemy locations.etc :" + room);
 }
 
 function Attack(msg){
 var room = DecodeMsg(msg);
-
+console.log("An ally requested we send offensive creeps to :" + room);
 }
 
 function AllOutAttack(msg){
 var room = DecodeMsg(msg);
-
+console.log("An ally requested we send ALL Offensive creeps to :" + room);
 }
 
 function DecodeMsg(msg){
@@ -29,6 +29,7 @@ return room
 
 function ReadMsg(creep){
 if (creep.saying != undefined){
+console.log(creep.owner.username + "'s scout creep said '" + creep.saying + "'.")
 if (creep.saying.substr(0,2) == "D-")  Defend(creep.saying);
 else if (creep.saying.substr(0,2) == "E-") Explore(creep.saying);
 else if (creep.saying.substr(0,2) == "A-") Attack(creep.saying);
