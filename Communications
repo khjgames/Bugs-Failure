@@ -21,7 +21,7 @@ var room = DecodeMsg(msg);
 
 function DecodeMsg(msg){
 var decoding = msg.split("-");
-var room = msg[1]; //2nd index
+var room = decoding[1]; //2nd index
 return room
 }
 
